@@ -1,0 +1,43 @@
+.card-edit {
+  display: flex;
+  justify-content: space-evenly;
+  flex-grow: 2;
+  margin:5px 0;
+}
+
+.btn-ubah {
+  background: #2358d3;
+  color: #fff;
+  width: 100%;
+  padding: 5px;
+  margin-right:5px;
+  border-radius: 5px;
+}
+
+.btn-ubah:hover {
+  background: #d4d4d4;
+}
+
+.btn-delete {
+  background-color: #de1414;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+
+.btn-delete:hover {
+  background: #d4d4d4;
+}
+
+.btn-image {
+  background-color: #04AA6D ;
+  color: #fff;
+  width: 100%;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.btn-image:hover {
+  background: #d4d4d4;
+}

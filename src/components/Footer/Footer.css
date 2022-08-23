@@ -1,0 +1,12 @@
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background: #002B5B;
+  padding: 1rem;
+  text-align: center;
+}
+
+.copyright {
+  color: white;
+}

@@ -1,0 +1,37 @@
+.n-wrapper {
+  padding: 0.5rem 3.5rem 0.5rem 5rem;
+  height:100px;
+  display:flex;
+  justify-content: space-between;
+  background-color: #FFF;
+  box-shadow: -2px -5px 21px 0px rgba(69,69,69,0.41);
+  -webkit-box-shadow: -2px -5px 21px 0px rgba(69,69,69,0.41);
+  -moz-box-shadow: -2px -5px 21px 0px rgba(69,69,69,0.41);
+}
+
+.n-left {
+  flex: 1;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.n-name {
+  font-family: 'Silkscreen', cursive;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.n-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: 400;
+}
+
+.n-list > ul {
+  display: flex;
+  gap: 1.5rem;
+  margin-right: 3rem;
+}

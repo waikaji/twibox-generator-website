@@ -1,0 +1,58 @@
+.card {
+  cursor: pointer;
+}
+
+.c-title h4 {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.c-support {
+  color: var(--gray);
+  padding-top: 5px;
+  font-size: 0.8rem;
+}
+
+.thumbnail {
+  max-width: 250px;
+  max-height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  border-radius: 10px;
+}
+
+.middle {
+  transition: .5 ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.card:hover .thumbnail .card-img {
+  opacity: 0.3;
+} 
+
+.card:hover .thumbnail .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #ffbf1c;
+  color: white;
+  font-size: 0.8rem;
+  padding:7px 15px;
+  border-radius: 10px;
+}

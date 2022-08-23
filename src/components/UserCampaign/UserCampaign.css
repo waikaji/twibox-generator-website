@@ -1,0 +1,22 @@
+.user-campaign {
+  margin: 0 20%;
+  padding: 1rem 0;
+}
+
+.uc-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.uc-title > h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.uc-campaign {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-gap: 20px 10px;
+  padding-top: 10px;
+}
+

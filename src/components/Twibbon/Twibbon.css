@@ -1,0 +1,59 @@
+.t-main {
+    padding: 40px;
+    background-color: #f5f5f5;
+}
+
+.t-canvas {
+    border-radius: 10px;
+    padding: 1rem;
+    width: 500px;
+    height: auto;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px -1px 9px 3px rgba(69,69,69,0.28);
+    -webkit-box-shadow: 0px -1px 9px 3px rgba(69,69,69,0.28);
+    -moz-box-shadow: 0px -1px 9px 3px rgba(69,69,69,0.28);
+}
+
+.t-photos {
+    margin: 0 auto;
+    position: relative;
+}
+
+.bt-rot {
+    background-color: var(--blue);
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.bt-rot-right {
+    position:absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.bt-rot-left {
+    position:absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.t-download {
+    text-align: center;
+    background-color: var(--blue);
+    color: #FFF;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 0 0 10px 10px;
+}
+
+.t-download:hover {
+    background-color: #FFCB42;
+}
+
+
