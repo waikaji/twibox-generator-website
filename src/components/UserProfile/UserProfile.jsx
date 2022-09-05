@@ -2,10 +2,23 @@ import React, {useState} from "react";
 import Popup from "../Popup/Popup";
 import UpdateImageUser from "../UpdateImageUser/UpdateImageUser";
 import Avatar from "../../img/avatar-image.webp";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux"
+import * as actionType from "../../constants/actionTypes"
+
 import "./UserProfile.css";
 
 const UserProfile = () => {
+  const user = JSON.parse(localStorage.getItem("profile"))
+
   const [buttonPopup, setButtonPopup] = useState(false)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const logout = () => {
+    dispatch({ type: actionType.LOGOUT })
+    navigate("/")
+  }
 
   return (
     <div className="user-profile">
@@ -20,7 +33,7 @@ const UserProfile = () => {
           </Popup>
         </div>
         <div className="up-name">
-          <h5>Wira Ardi Kesuma</h5>
+          <h5>{user.result.name}</h5>
           <div className="up-count">
             <div className="up-campaign">
               <label>Kampanye</label>
@@ -31,7 +44,7 @@ const UserProfile = () => {
               <label>5</label>
             </div>
           </div>
-          {/* <div className="btn-edit"><span>Ubah Profil</span></div> */}
+          <div onClick={logout} className="btn-logout"><span>Logout</span></div>
         </div>
       </div>
       

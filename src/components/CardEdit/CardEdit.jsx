@@ -6,11 +6,10 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import CameraAltIcon from '@mui/icons-material/CameraAlt';
 import DeleteIcon from '@mui/icons-material/Delete';
-import TestImage from "../../img/test_image.png";
 import "../Card/Card.css";
 import "./CardEdit.css";
 
-const CardEdit = () => {
+const CardEdit = ({data}) => {
   const [buttonPopup, setButtonPopup] = useState(false)
   const [buttonPopup1, setButtonPopup1] = useState(false)
   const [buttonPopup2, setButtonPopup2] = useState(false)
@@ -18,13 +17,13 @@ const CardEdit = () => {
   return (
     <div className="card">
       <div className="thumbnail">
-        <img className="card-img" src={TestImage} alt=""/>
+        <img className="card-img" src={data.url} alt=""/>
         <div className="middle">
           <div className="text">Lihat</div>
         </div>
       </div>
       <div className="c-title">
-        <h4>Hari Kemerdekaan</h4>
+        <h4>{data.title}</h4>
         <div className="c-support">
           <span><PeopleAltIcon fontSize="small"/> 73rb Pendukung</span>
         </div>
@@ -38,15 +37,15 @@ const CardEdit = () => {
       </div>
       <button onClick={() => setButtonPopup2(true)} className="btn-image"><CameraAltIcon fontSize="small" /> Ubah Gambar</button>
       <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <UpdateCampaign editImage={false}/>
+        <UpdateCampaign id_campaign={data.id} editImage={false}/>
       </Popup>
 
       <Popup trigger={buttonPopup1} setTrigger={setButtonPopup1}>
-        <Delete />
+        <Delete id_campaign={data.id} setTrigger={setButtonPopup1}/>
       </Popup>
 
       <Popup trigger={buttonPopup2} setTrigger={setButtonPopup2}>
-        <UpdateCampaign editImage={true}/>
+        <UpdateCampaign id_campaign={data.id} editImage={true}/>
       </Popup>
     </div>
   )

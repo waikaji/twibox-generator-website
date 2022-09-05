@@ -47,13 +47,14 @@ input[type=search] {
   outline: 0;
 }
 
-.banner-search > input[type=search] {
+.banner-search form > input[type=search] {
+  width: 500px;
   color: #FFFF;
   fill: #FFFF;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   border: 0;
-  padding: 0;
+  padding: 10px 0 0 0;
   padding-left: calc(50px / 3);
   padding-right: calc(50px / 3);
   display: inline-block;

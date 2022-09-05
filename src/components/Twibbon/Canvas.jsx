@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from '@mui/icons-material/Remove';
 
 const Canvas = ({ photo, frame, setPhoto, canvasRef}) => {
   const MAX_WIDTH = 465
@@ -11,7 +13,7 @@ const Canvas = ({ photo, frame, setPhoto, canvasRef}) => {
   const [size, setSize] = useState({width:0, height:0})
 
   const [rotate, setRotate] = useState(0);
-  const [degree, setDegree] = useState(0)
+  // const [degree, setDegree] = useState(0)
 
   const windowToCanvas = (canvas, x, y) => {
     var canvasBox = canvas.getBoundingClientRect()
@@ -141,52 +143,112 @@ const Canvas = ({ photo, frame, setPhoto, canvasRef}) => {
     return false
   };
 
-  const rotateImage = (degrees) => {
+  // const rotateImage = (degrees) => {
+  //   const canvas = canvasRef.current
+  //   const ctx = canvas.getContext('2d')
+  //   const rotateDegree = degrees*Math.PI/180
+
+  //   ctx.clearRect(0,0,MAX_WIDTH, MAX_HEIGHT)
+  //   ctx.save()
+  //   ctx.translate(MAX_WIDTH/2, MAX_WIDTH/2)
+  //   ctx.rotate(rotateDegree)
+  //   const offsetX = -size.width/2
+  //   const offsetY = -size.height/2
+  //   ctx.drawImage(photo, offsetX, offsetY, size.width, size.height)
+  //   ctx.restore()
+  //   // ctx.drawImage(image2, 0, 0, MAX_WIDTH, MAX_HEIGHT)
+
+  //   setDegree(rotateDegree)
+  // }
+
+  // const handleRightRotateImage = (event) => {
+  //   event.stopPropagation()
+  //   event.preventDefault()
+    
+  //   const degrees = rotate + 90
+
+  //   rotateImage(degrees)
+
+  //   if(degrees>=360) {
+  //     setRotate(0)
+  //   } else {
+  //     setRotate(degrees)
+  //   }
+  // }
+
+  // const handleLeftRotateImage = (event) => {
+  //   event.stopPropagation()
+  //   event.preventDefault()
+    
+  //   const degrees = rotate - 90
+
+  //   rotateImage(degrees)
+
+  //   if(rotate<=-360) {
+  //     setRotate(0)
+  //   } else {
+  //     setRotate(degrees)
+  //   }
+  // }
+
+  const handleZoomIn = (event) => {
+    event.stopPropagation()
+    
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
-    const rotateDegree = degrees*Math.PI/180
+
+    const bigger = 1
+
+    const enlargeRate = 1.1
+
+    const shrinkRate = 0.9
+
+    const rate = bigger > 0 ? enlargeRate : shrinkRate
+    const width = photo.width * rate
+    const height = photo.height * rate
 
     ctx.clearRect(0,0,MAX_WIDTH, MAX_HEIGHT)
-    ctx.save()
-    ctx.translate(MAX_WIDTH/2, MAX_WIDTH/2)
-    ctx.rotate(rotateDegree)
-    const offsetX = -size.width/2
-    const offsetY = -size.height/2
-    ctx.drawImage(photo, offsetX, offsetY, size.width, size.height)
-    ctx.restore()
-    // ctx.drawImage(image2, 0, 0, MAX_WIDTH, MAX_HEIGHT)
-
-    setDegree(rotateDegree)
+    // ctx.save()
+    // ctx.translate(MAX_WIDTH/4, MAX_HEIGHT/4)
+    // ctx.rotate(degree)
+    ctx.drawImage(photo, offsetDis.left, offsetDis.top, width, height)
+    // ctx.restore()
+    ctx.drawImage(frame, 0, 0, MAX_WIDTH, MAX_HEIGHT)
+    
+    photo.width = width
+    photo.height = height
+    setPhoto(photo)
+    setSize({width, height})
   }
 
-  const handleRightRotateImage = (event) => {
+  const handleZoomOut = (event) => {
     event.stopPropagation()
-    event.preventDefault()
     
-    const degrees = rotate + 90
+    const canvas = canvasRef.current
+    const ctx = canvas.getContext('2d')
 
-    rotateImage(degrees)
+    const bigger = -1
 
-    if(degrees>=360) {
-      setRotate(0)
-    } else {
-      setRotate(degrees)
-    }
-  }
+    const enlargeRate = 1.1
 
-  const handleLeftRotateImage = (event) => {
-    event.stopPropagation()
-    event.preventDefault()
+    const shrinkRate = 0.9
+
+    const rate = bigger > 0 ? enlargeRate : shrinkRate
+    const width = photo.width * rate
+    const height = photo.height * rate
+
+    ctx.clearRect(0,0,MAX_WIDTH, MAX_HEIGHT)
+    // ctx.save()
+    // ctx.translate(MAX_WIDTH/4, MAX_HEIGHT/4)
+    // ctx.rotate(degree)
+    ctx.drawImage(photo, offsetDis.left, offsetDis.top, width, height)
+    // ctx.restore()
+    ctx.drawImage(frame, 0, 0, MAX_WIDTH, MAX_HEIGHT)
     
-    const degrees = rotate - 90
-
-    rotateImage(degrees)
-
-    if(rotate<=-360) {
-      setRotate(0)
-    } else {
-      setRotate(degrees)
-    }
+    photo.width = width
+    photo.height = height
+    setPhoto(photo)
+    setSize({width, height})
   }
 
   useEffect(() => {
@@ -236,6 +298,8 @@ const Canvas = ({ photo, frame, setPhoto, canvasRef}) => {
         onWheel={handleWheelImage}
       >
       </canvas>
+      <div onClick={handleZoomIn} className="bt-zoom bt-zoom-top"><AddIcon/></div>
+      <div onClick={handleZoomOut} className="bt-zoom bt-zoom-bottom"><RemoveIcon/></div>
       {/* <div onClick={handleLeftRotateImage} className="bt-rot bt-rot-right"><Rotate90DegreesCwIcon/></div>
       <div onClick={handleRightRotateImage} className="bt-rot bt-rot-left"><Rotate90DegreesCcwIcon/></div> */}
     </div>

@@ -29,9 +29,21 @@
     cursor: pointer;
 }
 
+.bt-zoom {
+    background-color: var(--blue);
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+.bt-zoom:hover {
+    background-color: #FFF;
+    color: var(--blue);
+}
+
 .bt-rot-right {
     position:absolute;
-    bottom: 0;
+    bottom: 0;                  
     right: 0;
 }
 
@@ -40,6 +52,19 @@
     bottom: 0;
     left: 0;
 }
+
+.bt-zoom-top {
+    position:absolute;
+    bottom: 60px;                  
+    right: 5px;
+}
+
+.bt-zoom-bottom {
+    position:absolute;
+    bottom: 10px;
+    right: 5px;
+}
+
 
 .t-download {
     text-align: center;

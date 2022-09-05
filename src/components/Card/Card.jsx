@@ -2,22 +2,22 @@ import React from "react";
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import "./Card.css";
-import TestImage from "../../img/test_image.png";
+// import TestImage from "../../img/test_image.png";
 
-function Card() {
+function Card({data}) {
   return (
     <div className="card">
       <div className="thumbnail">
-        <img className="card-img" src={TestImage} alt=""/>
+        <img className="card-img" src={`${data.url}`} alt=""/>
         <div className="middle">
           <div className="text">Lihat</div>
         </div>
       </div>
       
       <div className="c-title">
-        <h4>Hari Kemerdekaan</h4>
+        <h4>{data.title}</h4>
         <div className="c-support">
-          <span><PeopleAltIcon fontSize="small" /> 73rb Pendukung</span>
+          <span><PeopleAltIcon fontSize="small" /> 500 Pendukung</span>
         </div>
         <div className="c-support">
           <span><AccessTimeIcon fontSize="small" /> 5 Hari yang lalu</span>

@@ -1,19 +1,20 @@
 import React, { useState, useRef, useEffect} from "react";
-// import TwibbonImage from "../../img/test_image.png";
 import Canvas from "./Canvas";
-import Rotate90DegreesCcwIcon from '@mui/icons-material/Rotate90DegreesCcw';
-import Rotate90DegreesCwIcon from '@mui/icons-material/Rotate90DegreesCw';
+// import Rotate90DegreesCcwIcon from '@mui/icons-material/Rotate90DegreesCcw';
+// import Rotate90DegreesCwIcon from '@mui/icons-material/Rotate90DegreesCw';
+
 import "./Twibbon.css";
 
-const Twibbon = () => {
+const Twibbon = ({data}) => {
 	const [file, setFile] = useState(null)
 	const [image, setImage] = useState(new Image())
 	const [image2, setImage2] = useState(new Image())
   
 	const [check, setCheck] = useState(false)
 	
+	
   const canvasRefference = useRef(null)
-  
+
   const download = () => {
     let canvas = canvasRefference.current
     let url = canvas.toDataURL("image/png")
@@ -34,10 +35,14 @@ const Twibbon = () => {
 
 		photoImage.src = file
 		photoImage.onload = () => setImage(photoImage)
-
-		twibbonImage.src = require("../../img/test_image.png")
+		const timer = setTimeout(() => {
+			twibbonImage.src = `${data[0].url}`
+    }, 500);
 		twibbonImage.onload = () => setImage2(twibbonImage)
-	}, [file])
+
+		return () => clearTimeout(timer);
+	}, [file, data])
+
 
 	return (
 			<div className="t-main">

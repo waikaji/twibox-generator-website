@@ -35,3 +35,20 @@
   gap: 1.5rem;
   margin-right: 3rem;
 }
+
+.account-button {
+  background-image: linear-gradient(140deg, #FFCB42 0%, #ffbf1c 100%);
+  border-radius: 50px;
+  padding: 0.4rem 0.5rem;
+  color: #277BC0;
+  fill: #277BC0;
+  transition: transform .3s;
+}
+
+.account-button:hover {
+  background: var(--blue);
+  cursor: pointer;
+  color: #FFF;
+  box-shadow: 0px 3px 16px 3px rgba(39, 226, 255, 0.42);
+  transform: scale(1.1, 1.1);
+}
