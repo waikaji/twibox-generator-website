@@ -10,10 +10,10 @@ function ListTwibbons({title="List Twibbons",data}) {
     <div className="twibbons">
       <div className="t-title">
         <h3>{title}</h3>
-        <select name="list" id="list">
+        {/* <select name="list" id="list">
           <option value="trending">Trending</option>
           <option value="popular">Popular</option>
-        </select>
+        </select> */}
       </div>
       
       <div className="t-list">

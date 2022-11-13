@@ -1,5 +1,6 @@
 .twibbons {
-  margin: 2rem 20%;
+  width: 60%;
+  margin: 30px auto;
   box-sizing: content-box;
 }
 
@@ -18,12 +19,12 @@
 .t-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .t-title > h3 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 600;
-  margin: 0.5rem 0.5rem;
 }
 
 .t-title > select {
@@ -31,4 +32,28 @@
   padding: 10px;
   margin: 10px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .t-title > h3 {
+    font-size: 1.5rem;
+  }
+
+  .twibbons {
+    width: 90%;
+    margin: 30px auto;
+    box-sizing: content-box;
+  }
+
+  .t-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .t-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 10px;
+  }
 }

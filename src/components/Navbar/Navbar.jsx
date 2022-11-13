@@ -13,17 +13,17 @@ function Navbar() {
     const user = JSON.parse(localStorage.getItem("profile"))
 
     return (
-    <div>
+    <header className="header">
         <div className="n-wrapper">
             <div className="n-left">
-                <Link to="/"><div className="n-name">Twibbon</div></Link>
+                <Link to="/"><div className="n-name">Twibox</div></Link>
             </div>
 
             <div className="n-right">
                 <div className="n-list">
                     <ul style={{listStyleType:"none"}}>
                         {user?<li className="button" onClick={() => setButtonPopup(true)}>Create</li>:""}
-                        {user?<Link to={`/profile/${user.result.id}`}><li className="account-button"><AccountCircleIcon/></li></Link>:<li className="button" onClick={() => setButtonPopup1(true)}>Masuk</li>}
+                        {user?<Link to={`/profile`}><li className="account-button"><AccountCircleIcon/></li></Link>:<li className="button" onClick={() => setButtonPopup1(true)}>Masuk</li>}
                     </ul>
                 </div>
             </div>
@@ -34,7 +34,7 @@ function Navbar() {
         <Popup trigger={buttonPopup1} setTrigger={setButtonPopup1}> 
             <Login/>
         </Popup>
-    </div>
+    </header>
     )
 }
 

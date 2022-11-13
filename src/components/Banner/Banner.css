@@ -1,5 +1,5 @@
 .banner-campaign {
-  background: url(../../img/bg_lomba_web.svg);
+  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url(../../img/bg_lomba_web.svg);
   background-size: cover;
   width: 100%;
   height: 50vh;
@@ -15,8 +15,9 @@
 
 .banner-info h1 {
   font-weight: bold;
-  color: var(--blue);
-  font-size: 3rem;
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .banner-search {
@@ -24,9 +25,10 @@
   transition: .2s;
   overflow: hidden;
   border: 0 solid transparent;
-  min-height: 50px;
+  min-height: 40px;
+  align-items: center;
   box-shadow: 0px 0px 10px 0px rgb(245 185 68 / 25%);
-  background-color: var(--blue);
+  background-color: #fff;
   border-color: #1D50A3;
   border-width: 2px 2px 2px 2px;
   border-radius: 200px;
@@ -49,12 +51,11 @@ input[type=search] {
 
 .banner-search form > input[type=search] {
   width: 500px;
-  color: #FFFF;
-  fill: #FFFF;
+  color: #000;
+  fill: #000;
   font-family: 'Poppins', sans-serif;
   margin: 0;
   border: 0;
-  padding: 10px 0 0 0;
   padding-left: calc(50px / 3);
   padding-right: calc(50px / 3);
   display: inline-block;
@@ -69,4 +70,20 @@ input[type=search] {
 
 .banner-search-input {
   flex-basis: 100%;
+}
+
+@media screen and (max-width: 500px) {
+  .banner-info h1 {
+    font-size: 1.5rem;
+  }
+
+  .banner-search form > input[type=search] {
+    width: 300px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .banner-search form > input[type=search] {
+    width: 270px;
+  }
 }

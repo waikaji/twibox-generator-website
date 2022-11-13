@@ -121,3 +121,9 @@
   border-radius: 10px;
 }
 
+@media screen and (max-width: 430px) {
+  .user-profile {
+    margin: 0;
+  }
+}
+

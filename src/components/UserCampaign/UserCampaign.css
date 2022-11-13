@@ -20,3 +20,30 @@
   padding-top: 10px;
 }
 
+@media screen and (max-width: 500px) {
+  .uc-title > h2 {
+    font-size: 1.4rem;
+  }
+
+  .uc-campaign {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 20px 10px;
+    padding-top: 10px;
+  }
+
+  .user-campaign {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .uc-campaign {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-gap: 20px 10px;
+    padding-top: 10px;
+  }
+}
