@@ -35,7 +35,9 @@ const CardEdit = ({data}) => {
         <button onClick={() => setButtonPopup(true)}  className="btn-ubah">Edit</button>
         <button onClick={() => setButtonPopup1(true)} className="btn-delete"><DeleteIcon /></button>
       </div>
-      <button onClick={() => setButtonPopup2(true)} className="btn-image"><CameraAltIcon fontSize="small" /> Ubah Gambar</button>
+      <div className="card-edit">
+        <button onClick={() => setButtonPopup2(true)} className="btn-image"><CameraAltIcon fontSize="small" /> Ubah Gambar</button>
+      </div>
       <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
         <UpdateCampaign id_campaign={data.id} editImage={false}/>
       </Popup>

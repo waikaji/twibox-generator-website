@@ -3,8 +3,8 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 
 const Canvas = ({ photo, frame, setPhoto, canvasRef}) => {
-  const MAX_WIDTH = 465
-	const MAX_HEIGHT = 465
+  const MAX_WIDTH = 1000
+	const MAX_HEIGHT = 1000
 
   const [mouseDownFlag, setMouseDownFlag] = useState(false)
   const [mouseDownPos, setMouseDownPos] = useState({x:0,y:0})
@@ -86,8 +86,6 @@ const Canvas = ({ photo, frame, setPhoto, canvasRef}) => {
     // ctx.save()
     // ctx.translate(MAX_WIDTH/4, MAX_WIDTH/4)
     // ctx.rotate(degree)
-    console.log("size width : ", size.width)
-    console.log("size height : ", size.height)
     ctx.drawImage(photo, offsetX, offsetY, size.width, size.height)
     // ctx.restore()
     ctx.drawImage(frame, 0, 0, MAX_WIDTH, MAX_HEIGHT)

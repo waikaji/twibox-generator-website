@@ -20,10 +20,11 @@ export const getMyCampaign = (id_user) => async(dispatch) => {
   }
 }
 
-export const getCampaigns = () => async(dispatch) => {
+export const getCampaigns = (page=0, limit=12) => async(dispatch) => {
   try{
-    const {data} = await api.fetchCampaigns()
+    const {data} = await api.fetchCampaigns(page, limit)
     dispatch({type: FETCH_ALL_CAMPAIGNS, payload: data})
+    return data
   } catch(error) {
     console.log(error)
   }

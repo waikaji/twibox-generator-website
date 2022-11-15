@@ -33,7 +33,7 @@ const AUTH_API = axios.create({ baseURL: "http://localhost:4000/api"})
 
 export const login = (formData) => AUTH_API.post("/auth/login", formData)
 export const register = (formData) => AUTH_API.post("/auth/register", formData)
-export const fetchCampaigns = () => AUTH_API.get("/campaigns")
+export const fetchCampaigns = (page, limit) => AUTH_API.get(`/campaigns?page=${page}&limit=${limit}`)
 export const countDownloader = (id) => AUTH_API.patch(`/campaigns/downloader/${id}`)
 export const searchCampaigns = (keyword) => AUTH_API.get(`/campaigns/search?keyword=${keyword}`)
 export const fetchCampaign = (id) => AUTH_API.get(`/campaigns/${id}`) 

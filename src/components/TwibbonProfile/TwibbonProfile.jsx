@@ -20,8 +20,8 @@ function TwibbonProfile({data}) {
       <h4>{user.result.name}</h4>
       <h2>{campaign.title}</h2>
       <div className="tp-attribute">
-        <span><PeopleAltIcon /> 1 Pendukung</span>
-        <span><AccessTimeIcon /> 5 Hari yang lalu</span>
+        {/* <span><PeopleAltIcon /> 1000 Pendukung</span>
+        <span><AccessTimeIcon /> 5 Hari yang lalu</span> */}
         <h5>{campaign.description}</h5>
       </div>
     </div>

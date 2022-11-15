@@ -27,22 +27,4 @@
   color: (--black);
 }
 
-.button {
-  font-size: 1rem;
-  border-radius: 50px;
-  padding: 0.4rem 1.2rem 0.4rem 1.2rem;
-  color: #277BC0;
-  fill: #277BC0;
-  font-weight: 500;
-  background-image: linear-gradient(140deg, #FFCB42 0%, #ffbf1c 100%);
-  box-shadow: 0px 3px 16px 3px rgba(251, 161, 40, 0.42);
-  transition: transform .3s;
-}
 
-.button:hover {
-  background: var(--blue);
-  cursor: pointer;
-  color: #FFF;
-  box-shadow: 0px 3px 16px 3px rgba(39, 226, 255, 0.42);
-  transform: scale(1.1, 1.1);
-}
