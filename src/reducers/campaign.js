@@ -1,7 +1,11 @@
-import {POST_CAMPAIGN, UPDATE_IMAGE_CAMPAIGN, FETCH_MY_CAMPAIGN, FETCH_ALL_CAMPAIGNS, COUNT_DOWNLOADER, SEARCH_CAMPAIGNS, FETCH_CAMPAIGN, UPDATE_CAMPAIGN, DELETE_CAMPAIGN} from "../constants/actionTypes"
+import {POST_CAMPAIGN, START_LOADING, END_LOADING, UPDATE_IMAGE_CAMPAIGN, FETCH_MY_CAMPAIGN, FETCH_ALL_CAMPAIGNS, COUNT_DOWNLOADER, SEARCH_CAMPAIGNS, FETCH_CAMPAIGN, UPDATE_CAMPAIGN, DELETE_CAMPAIGN} from "../constants/actionTypes"
 
-const reducer = (state = {campaigns: []}, action) => {
+const reducer = (state = {isLoading: true, campaigns: []}, action) => {
   switch(action.type){
+    case START_LOADING:
+      return { ...state, isLoading: true}
+    case END_LOADING:
+      return { ...state, isLoading: false}
     case FETCH_ALL_CAMPAIGNS:
       return {...state, campaigns: action.payload.campaigns}
     case FETCH_MY_CAMPAIGN:

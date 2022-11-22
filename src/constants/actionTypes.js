@@ -6,6 +6,9 @@ export const FETCH_USER = "FETCH_USER"
 export const FETCH_EMAIL_USER = "FETCH_EMAIL_USER"
 export const UPDATE_USER = "UPDATE_USER"
 
+export const START_LOADING = "START_LOADING"
+export const END_LOADING = "END_LOADING"
+
 export const POST_CAMPAIGN = "POST_CAMPAIGN"
 export const FETCH_MY_CAMPAIGN = "FETCH_MY_CAMPAIGN"
 

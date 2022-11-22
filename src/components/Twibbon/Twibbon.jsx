@@ -27,7 +27,7 @@ const Twibbon = ({data}) => {
     let canvas = canvasRefference.current
     let url = canvas.toDataURL("image/png")
     let link = document.createElement('a')
-		let filename = makeid(10)
+		let filename = makeid(20)
     link.download = `twibox-${filename}.png`
     link.href = url
     link.click()	
