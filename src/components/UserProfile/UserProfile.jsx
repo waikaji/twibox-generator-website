@@ -25,12 +25,12 @@ const UserProfile = () => {
       <div className="up-profile">
         <div className="image-avatar">
           <img className="card-avatar" src={Avatar} alt="" />
-          <div className="middle-avatar">
+          {/* <div className="middle-avatar">
             <div onClick={() => setButtonPopup(true)} className="text-avatar">Ubah Foto</div>
-          </div>
-          <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
+          </div> */}
+          {/* <Popup trigger={buttonPopup} setTrigger={setButtonPopup}>
             <UpdateImageUser />
-          </Popup>
+          </Popup> */}
         </div>
         <div className="up-name">
           <h5>{user.result.name}</h5>
