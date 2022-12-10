@@ -39,13 +39,13 @@ function Create() {
     <h3>Create Campaign</h3>
       <form onSubmit={handleSubmit} >
         <h4>Title</h4>
-        <input onChange={handleChange} type="text" id="title" name="title"/>
+        <input onChange={handleChange} type="text" id="title" name="title" required/>
 
         <h4>Description</h4>
-        <textarea onChange={handleChange} id="description" name="description" rows="4"></textarea>
+        <textarea onChange={handleChange} id="description" name="description" rows="4" required></textarea>
 
         <h4>Upload Image</h4>
-        <input onChange={handleImage} type="file" id="image_filename" name="image_filename" accept="image/jpeg, image/png, image/jpg"/>
+        <input onChange={handleImage} type="file" id="image_filename" name="image_filename" accept="image/jpeg, image/png, image/jpg" required/>
 
         <br/>
         <input className="button btn-submit" type="submit" />

@@ -31,9 +31,9 @@ const UpdateCampaign = ({id_campaign, editImage}) => {
       <>
         <form onSubmit={submitImageHandle}>
           <h4>Upload Image</h4>
-          <input onChange={handleImageChange} type="file" id="file" name="file"/>
+          <input onChange={handleImageChange} type="file" id="file" name="file" required/>
           <br />
-          <input className="button btn-submit" type="submit" />
+          <input className="button btn-submit" type="submit" required/>
         </form>
       </>
     );
@@ -44,10 +44,10 @@ const UpdateCampaign = ({id_campaign, editImage}) => {
       <>
         <form onSubmit={submitEditHandle}>
           <h4>Title</h4>
-          <input onChange={handleChange} type="text" id="title" name="title" value={campaignData.title}/>
+          <input onChange={handleChange} type="text" id="title" name="title" value={campaignData.title} required/>
 
           <h4>Description</h4>
-          <textarea onChange={handleChange} id="description" name="description" rows="4" value={campaignData.description}></textarea>
+          <textarea onChange={handleChange} id="description" name="description" rows="4" value={campaignData.description} required></textarea>
           <br />
           <input className="button btn-submit" type="submit" />
         </form>

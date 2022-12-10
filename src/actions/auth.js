@@ -7,7 +7,7 @@ export const login = (formData, history) => async (dispatch) => {
     dispatch({ type: AUTH, data });
     history(`/profile`);
   } catch (error) {
-    console.log(error);
+    return error.response.data.message;
   }
 };
 
@@ -17,6 +17,6 @@ export const register = (formData, history) => async (dispatch) => {
     dispatch({ type: AUTH, data });
     history(`/profile`);
   } catch (error) {
-    console.log(error);
+    return error.response.data.message;
   }
 };

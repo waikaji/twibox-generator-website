@@ -22,6 +22,14 @@
   border-radius: 4px;
 }
 
+.create form > input[type=email] {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 5px 5px 5px 10px;
+  margin-bottom: 1.5rem;
+  border-radius: 4px;
+}
+
 .create form > input[type=password] {
   width: 100%;
   border: 1px solid rgba(0,0,0,0.2);
