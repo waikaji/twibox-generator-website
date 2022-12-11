@@ -1,10 +1,14 @@
 import React from "react";
 import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
+import moment from "moment";
 import "./Card.css";
 // import TestImage from "../../img/test_image.png";
 
 function Card({data}) {
+
+
+
   return (
     <div className="card">
       <div className="thumbnail">
@@ -20,7 +24,7 @@ function Card({data}) {
           <span><PeopleAltIcon fontSize="small" /> {`${data.downloader}`} Pengunduh</span>
         </div>
         <div className="c-support">
-          <span><AccessTimeIcon fontSize="small" /> 5 Hari yang lalu</span>
+          <span><AccessTimeIcon fontSize="small" /> {`${moment(data.created_at.split("T")[0].split("-").join(""), "YYYYMMDD").fromNow()}`}</span>
         </div>
       </div>
     </div>

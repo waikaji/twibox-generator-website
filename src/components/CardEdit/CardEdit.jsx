@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment";
 import Popup from "../Popup/Popup";
 import Delete from "../Delete/Delete";
 import UpdateCampaign from "../UpdateCampaign/UpdateCampaign";
@@ -28,7 +29,7 @@ const CardEdit = ({data}) => {
           <span><PeopleAltIcon fontSize="small"/> {`${data.downloader}`} Pengunduh</span>
         </div>
         <div className="c-support">
-          <span><AccessTimeIcon fontSize="small"/> 5 Hari yang lalu</span>
+          <span><AccessTimeIcon fontSize="small"/>{`${moment(data.created_at.split("T")[0].split("-").join(""), "YYYYMMDD").fromNow()}`}</span>
         </div>
       </div>
       <div className="card-edit">
