@@ -4,7 +4,7 @@ const reducer = (state = {users:[], user:{}}, action) => {
   switch(action.type){
     case FETCH_ALL_USERS:
     case FETCH_USER:
-      return { ...state, user: action.payload.user[0]}
+      return { ...state, user: action.payload.user}
     case UPDATE_USER:
     case UPDATE_AVATAR:  
     default:

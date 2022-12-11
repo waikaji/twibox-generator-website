@@ -42,7 +42,6 @@ export const clickDownloader = (id) => async(dispatch) => {
 export const searchCampaigns = (keyword) => async(dispatch) => {
   try{
     const {data} = await api.searchCampaigns(keyword)
-    console.log(data)
     dispatch({type:SEARCH_CAMPAIGNS, payload: data})
   } catch(error) {
     console.log(error)
