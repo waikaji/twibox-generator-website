@@ -1,17 +1,18 @@
 import React, {useState} from "react";
 import "../Create/Create.css";
 import { useDispatch } from "react-redux";
+import { updateAvatar } from "../../actions/users";
 
-const UpdateImageUser = () => {
+const UpdateImageUser = ({id_user}) => {
 
   const dispatch = useDispatch();
   const [file, setFile] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("file", file);
-    // dispatch(updateImage);
+    dispatch(updateAvatar(id_user, formData));
   }
 
   const handleImage = (e) => {

@@ -5,6 +5,7 @@ export const FETCH_ALL_USERS = "FETCH_USERS"
 export const FETCH_USER = "FETCH_USER"
 export const FETCH_EMAIL_USER = "FETCH_EMAIL_USER"
 export const UPDATE_USER = "UPDATE_USER"
+export const UPDATE_AVATAR = "UPDATE_AVATAR"
 
 export const START_LOADING = "START_LOADING"
 export const END_LOADING = "END_LOADING"

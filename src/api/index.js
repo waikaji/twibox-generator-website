@@ -20,6 +20,11 @@ export const postCampaign = (formData) => API.post("/campaigns", formData, {
     "Content-type": "multipart/form-data",
   },
 })
+export const updateAvatar = (id, formData) => API.patch(`/users/avatar/${id}`, formData, {
+  headers: {
+    "Content-type": "multipart/form-data",
+  }
+})
 export const fetchMyCampaign = (id_user) => API.get(`/campaigns/mycampaign/${id_user}`)
 export const updateCampaign = (id, formData) => API.patch(`/campaigns/${id}`, formData)
 export const deleteCampaign = (id) => API.delete(`/campaigns/${id}`)

@@ -3,7 +3,6 @@ import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 import AccessTimeIcon from '@mui/icons-material/AccessTime';
 import moment from "moment";
 import "./Card.css";
-// import TestImage from "../../img/test_image.png";
 
 function Card({data}) {
 

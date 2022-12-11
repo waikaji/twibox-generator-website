@@ -14,7 +14,6 @@ const Search = () => {
     dispatch(searchCampaigns(query.get("keyword")))
   }, [query, dispatch])
   const {campaigns} = useSelector(state => state.campaign)
-  console.log(campaigns)
 
   return (
     <>
