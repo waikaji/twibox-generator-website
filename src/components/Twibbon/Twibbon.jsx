@@ -1,4 +1,7 @@
 import React, { useState, useRef, useEffect} from "react";
+import {useDispatch} from "react-redux";
+import { useParams } from "react-router-dom";
+import { clickDownloader } from "../../actions/campaign";
 import Canvas from "./Canvas";
 
 import "./Twibbon.css";
@@ -9,8 +12,10 @@ const Twibbon = ({data}) => {
 	const [image2, setImage2] = useState(new Image())
   
 	const [check, setCheck] = useState(false)
-	
-	
+	const params = useParams()
+
+	const dispatch = useDispatch();
+
   const canvasRefference = useRef(null)
 
 	const makeid = (length) => {
@@ -30,7 +35,9 @@ const Twibbon = ({data}) => {
 		let filename = makeid(20)
     link.download = `twibox-${filename}.png`
     link.href = url
-    link.click()	
+    link.click()
+		console.log(params.id)
+		dispatch(clickDownloader(params.id))	
   }
 
 	const selectImage = (event) => {

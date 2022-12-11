@@ -24,8 +24,8 @@
 }
 
 .thumbnail {
-  max-width: 250px;
-  max-height: 250px;
+  max-width: 390px;
+  max-height: 390px;
   position: relative;
   overflow: hidden;
 }

@@ -25,7 +25,7 @@ const CardEdit = ({data}) => {
       <div className="c-title">
         <h4>{data.title}</h4>
         <div className="c-support">
-          <span><PeopleAltIcon fontSize="small"/> 73rb Pendukung</span>
+          <span><PeopleAltIcon fontSize="small"/> {`${data.downloader}`} Pengunduh</span>
         </div>
         <div className="c-support">
           <span><AccessTimeIcon fontSize="small"/> 5 Hari yang lalu</span>

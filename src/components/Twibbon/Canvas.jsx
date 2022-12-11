@@ -279,7 +279,7 @@ const Canvas = ({ photo, frame, setPhoto, canvasRef}) => {
       setPhoto(photo)
       setSize({width:photo.width, height:photo.height})
 
-      ctx.drawImage(photo, 0, 0, photo.width, photo.height)
+      ctx.drawImage(photo, 250, 250, photo.width, photo.height)
 			ctx.drawImage(frame, 0, 0, MAX_WIDTH, MAX_HEIGHT)
 		}	
 	}, [photo, frame, canvasRef, MAX_WIDTH, MAX_HEIGHT, setPhoto])

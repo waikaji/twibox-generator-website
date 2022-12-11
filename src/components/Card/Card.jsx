@@ -17,7 +17,7 @@ function Card({data}) {
       <div className="c-title">
         <h4>{data.title}</h4>
         <div className="c-support">
-          <span><PeopleAltIcon fontSize="small" /> 500 Pendukung</span>
+          <span><PeopleAltIcon fontSize="small" /> {`${data.downloader}`} Pengunduh</span>
         </div>
         <div className="c-support">
           <span><AccessTimeIcon fontSize="small" /> 5 Hari yang lalu</span>

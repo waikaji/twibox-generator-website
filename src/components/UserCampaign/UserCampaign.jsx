@@ -1,22 +1,13 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import CardEdit from "../CardEdit/CardEdit"
 import Create from "../Create/Create"
 import Popup from "../Popup/Popup"
-import {useDispatch, useSelector} from "react-redux"
-import { getMyCampaign } from "../../actions/campaign"
+
 import "./UserCampaign.css"
 
-const UserCampaign = () => {
+const UserCampaign = ({campaigns}) => {
   const [buttonPopup, setButtonPopup] = useState(false)
-  const dispatch = useDispatch()
-
-  const user = JSON.parse(localStorage.getItem("profile"))
-
-  useEffect(() => {
-    dispatch(getMyCampaign(user.result.id))
-  }, [user, dispatch])
-
-  const {campaigns} = useSelector(state => state.campaign)
+  
   
   return (
     <div className="user-campaign">
