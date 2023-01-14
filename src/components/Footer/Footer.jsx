@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer>
       <div className="copyright">
-        <span>&copy;2022 Twibox</span>
+        <span>&copy;2023 Twibox</span>
       </div>
     </footer>
   )

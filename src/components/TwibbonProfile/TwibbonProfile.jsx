@@ -10,26 +10,29 @@ import "./TwibbonProfile.css";
 function TwibbonProfile({data}) {
   const dispatch = useDispatch()
 
-  const userProfile = JSON.parse(localStorage.getItem("profile"))
-  const [campaign, setCampaign] = useState({title:"", description:"", downloader:0, created_at:""})
+  const [campaign, setCampaign] = useState({title:"", id_user: 0, description:"", downloader:0, created_at:""})
   useEffect(() => {
     const timer = setTimeout(() => {
-      setCampaign({...campaign, title:data[0].title, description:data[0].description, downloader:data[0].downloader, created_at:data[0].created_at})
+      setCampaign({...campaign, title:data[0].title, id_user:data[0].id_user, description:data[0].description, downloader:data[0].downloader, created_at:data[0].created_at})
     }, 500);
 
 		return () => clearTimeout(timer);
   }, [setCampaign, campaign, data])
 
   useEffect(() => {
-    dispatch(getUser(userProfile.result.id))
-  }, [dispatch, userProfile]) 
+    const timer = setTimeout(() => {
+      dispatch(getUser(campaign.id_user))
+    }, 1000);
+    
+		return () => clearTimeout(timer);
+  }, [dispatch, campaign.id_user]) 
 
   const {user} = useSelector(state => state.users)
 
   return (  
     <div className="tp-campaign">
       <img src={user.url?user.url:AvatarImage} alt="avatar"/>
-      <h3>{userProfile.result.name}</h3>
+      <h3>{user.name}</h3>
       <h2>{campaign.title}</h2>
       <div className="tp-attribute">
         <span><PeopleAltIcon />  {campaign.downloader} Pengunduh</span>
